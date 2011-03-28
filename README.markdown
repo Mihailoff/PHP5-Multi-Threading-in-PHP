@@ -1,4 +1,4 @@
-(Script originally created in 2009/01/25 for a french website : [http://www.phpcs.com/codes/PHP5-MULTI-THREADING-ACCELERATION-TEMPS-TRAVAIL-SCRIPT_49077.aspx](http://www.phpcs.com/codes/PHP5-MULTI-THREADING-ACCELERATION-TEMPS-TRAVAIL-SCRIPT_49077.aspx "PHP CS"))
+(**Script originally created in 2009/01/25** for a french website : [http://www.phpcs.com/codes/PHP5-MULTI-THREADING-ACCELERATION-TEMPS-TRAVAIL-SCRIPT_49077.aspx](http://www.phpcs.com/codes/PHP5-MULTI-THREADING-ACCELERATION-TEMPS-TRAVAIL-SCRIPT_49077.aspx "PHP CS"))
 
 L'article rédigé par Martin Roest [http://www.ibuildings.com/blog/archives/1539-Boost-performance-with-parallel-processing.html](http://www.ibuildings.com/blog/archives/1539-Boost-performance-with-parallel-processing.html) nous montre à quel point il peut-être facile de jouer avec plusieurs processus en même temps, même en PHP.
 
