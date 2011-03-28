@@ -10,7 +10,6 @@ En gros et pour faire simple, ce type de script s'utilise en ligne de commande (
 
 Pour vous prouver l'efficacité de mes dires, voici un code bateau qui utilise 5 processus simultanés pour exécuter un script :
 
-`
 	<?php
 	/**
 	 * Voici un exemple de ce que cela pourrait donner :
@@ -42,7 +41,6 @@ Pour vous prouver l'efficacité de mes dires, voici un code bateau qui utilise 5
 		}
 	}
 	?>
-`
 
 Au final, sans utiliser plusieurs processus, ce code aurait pris 12*20 = 240 secondes.
 Avec 5 enfants, le temps de travail est divisé par ... 5, soit 48 secondes ! Quand même !
