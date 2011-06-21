@@ -121,7 +121,7 @@ class Fork
     public function getCallback()
     {
         if (null === $this->_callback) {
-            $this->_callback = function () 
+            $this->_callback = function ()
             {
                 // ..
             };
@@ -176,7 +176,8 @@ class Fork
             posix_setuid($this->getUid());
 
             // We are in the child process
-            call_user_func($this->getCallback());
+            $result = call_user_func($this->getCallback());
+            $this->_memory->write('callbackResult', $result);
             $this->_memory->write('running', false);
             exit(0);
         }
@@ -191,12 +192,10 @@ class Fork
      */
     public function stop()
     {
-        if (null === $this->_pid) {
-            $message = 'There is no forked process.';
-            throw new \UnexpectedValueException($message);
+        if ($this->_pid > 0) {
+            posix_kill($this->_pid, SIGKILL);
         }
         $this->_memory->clean();
-        posix_kill($this->_pid, SIGKILL);
     }
 
     /**
@@ -207,6 +206,16 @@ class Fork
     public function isRunning()
     {
         return $this->_memory->read('running');
+    }
+
+    /**
+     * Returns the callback result.
+     *
+     * @return  mixed
+     */
+    public function getCallbackResult()
+    {
+        return $this->_memory->read('callbackResult');
     }
 
     /**
